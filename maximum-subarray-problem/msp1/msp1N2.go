@@ -1,4 +1,4 @@
-package msp
+package msp1
 
 func mspN2(n []int) (maxSum, mi, mj int) {
 	l := len(n)
@@ -14,6 +14,9 @@ func mspN2(n []int) (maxSum, mi, mj int) {
 			if sum > maxSum {
 				maxSum = sum
 				mi = i
+				mj = k
+			}
+			if sum == maxSum {
 				mj = k
 			}
 		}
