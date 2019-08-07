@@ -1,4 +1,4 @@
-package msp1
+package msp
 
 func mspN1(n []int) (maxSum, mi, mj int) {
 	l := len(n)
