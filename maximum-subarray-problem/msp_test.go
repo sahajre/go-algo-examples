@@ -1,4 +1,4 @@
-package main
+package msp
 
 import "testing"
 
@@ -100020,10 +100020,19 @@ var testcases = [...]struct {
 	}, 100000, 99999, 99999},
 }
 
-func TestMssN3(t *testing.T) {
+func TestMspN1(t *testing.T) {
 	for _, tt := range testcases {
-		maxSum, mi, mj := mspN3(tt.n)
-		if maxSum != tt.emaxSum {
+		maxSum, mi, mj := mspN1(tt.n)
+		if maxSum != tt.emaxSum || mi != tt.emi || mj != tt.emj {
+			t.Errorf("expected %v %v %v, got %v, %v, %v", tt.emaxSum, tt.emi, tt.emj, maxSum, mi, mj)
+		}
+	}
+}
+
+func TestMspN2(t *testing.T) {
+	for _, tt := range testcases {
+		maxSum, mi, mj := mspN2(tt.n)
+		if maxSum != tt.emaxSum || mi != tt.emi || mj != tt.emj {
 			t.Errorf("expected %v %v %v, got %v, %v, %v", tt.emaxSum, tt.emi, tt.emj, maxSum, mi, mj)
 		}
 	}
